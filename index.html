@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tegnspråk</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div id="webcam-container"></div>
-    <div id="label-container">
+    <h1>Teachable Machine Image Model</h1>
+    <div id="btnStart" type="button" onclick="init()">Start</div>
+    <div id="mainFlex">
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -33,7 +35,7 @@
             maxPredictions = model.getTotalClasses();
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            webcam = new tmImage.Webcam(350, 350, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
