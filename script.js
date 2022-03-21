@@ -45,12 +45,11 @@ async function predict() {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
-                
+        }        
         // dette under funker ikke enda, får fikset det senere
         // if (prediction[i] >= 0.8) {
         //     labelContainer.innerHTML = "A";
         // }
-}
-console.log(prediction);
+    console.log(prediction);
 }
 init();
