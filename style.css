@@ -16,15 +16,3 @@ body{
 h1 {
     text-align: center;
 }
-#btnStart{
-    position: absolute;
-    bottom: 20%;
-    right: 50%;
-    background-color: lightgray;
-    border: solid 1px black;
-    padding: 5px;
-}
-#btnStart:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
