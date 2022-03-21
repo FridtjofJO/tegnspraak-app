@@ -37,15 +37,134 @@ async function loop() {
     await predict();
     window.requestAnimationFrame(loop);
 }
-        // run the webcam image through the image model
+
+const alleBokstaver = [
+    {
+        storBokstav: "A",
+        litenBokstav: "a"
+    },
+    {
+        storBokstav: "B",
+        litenBokstav: "b"
+    },
+    {
+        storBokstav: "C",
+        litenBokstav: "c"
+    },
+    {
+        storBokstav: "D",
+        litenBokstav: "d"
+    },
+    {
+        storBokstav: "E",
+        litenBokstav: "e"
+    },
+    {
+        storBokstav: "F",
+        litenBokstav: "f"
+    },
+    {
+        storBokstav: "G",
+        litenBokstav: "g"
+    },
+    {
+        storBokstav: "H",
+        litenBokstav: "h"
+    },
+    {
+        storBokstav: "I",
+        litenBokstav: "i"
+    },
+    {
+        storBokstav: "J",
+        litenBokstav: "j"
+    },
+    {
+        storBokstav: "K",
+        litenBokstav: "k"
+    },
+    {
+        storBokstav: "L",
+        litenBokstav: "l"
+    },
+    {
+        storBokstav: "M",
+        litenBokstav: "m"
+    },
+    {
+        storBokstav: "N",
+        litenBokstav: "n"
+    },
+    {
+        storBokstav: "O",
+        litenBokstav: "o"
+    },
+    {
+        storBokstav: "P",
+        litenBokstav: "p"
+    },
+    {
+        storBokstav: "Q",
+        litenBokstav: "q"
+    },
+    {
+        storBokstav: "R",
+        litenBokstav: "r"
+    },
+    {
+        storBokstav: "S",
+        litenBokstav: "s"
+    },
+    {
+        storBokstav: "T",
+        litenBokstav: "t"
+    },
+    {
+        storBokstav: "U",
+        litenBokstav: "u"
+    },
+    {
+        storBokstav: "V",
+        litenBokstav: "v"
+    },
+    {
+        storBokstav: "W",
+        litenBokstav: "w"
+    },
+    {
+        storBokstav: "X",
+        litenBokstav: "x"
+    },
+    {
+        storBokstav: "Y",
+        litenBokstav: "y"
+    },
+    {
+        storBokstav: "Z",
+        litenBokstav: "z"
+    },
+    {
+        storBokstav: "Æ",
+        litenBokstav: "æ"
+    },
+    {
+        storBokstav: "Ø",
+        litenBokstav: "ø"
+    },
+    {
+        storBokstav: "Å",
+        litenBokstav: "å"
+    }
+]
+
+// run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             if (prediction[i].probability >= 0.98){
-                labelContainer.innerHTML += 
+                labelContainer.innerHTML += alleBokstaver[i].litenBokstav + " "
             }
-
 
             // const classPrediction =
             //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
