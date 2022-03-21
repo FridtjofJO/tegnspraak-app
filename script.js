@@ -22,6 +22,7 @@ async function init() {
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
+        predict();
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
@@ -32,9 +33,9 @@ async function init() {
         console.log("sry assa, kamera er allerede på, hjelper ikke å trykke igjen")
     }
 }
-async function loop() {
+function loop() {
     webcam.update(); // update the webcam frame
-    await predict();
+    //predict();
     window.requestAnimationFrame(loop);
 }
 
@@ -163,13 +164,12 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             if (prediction[i].probability >= 0.98){
-                labelContainer.innerHTML += alleBokstaver[i].litenBokstav + " "
+                labelContainer.innerHTML += alleBokstaver[i].litenBokstav + " ";
             }
-
-            // const classPrediction =
-            //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            //     labelContainer.childNodes[i].innerHTML = classPrediction;
         }        
-    console.log(prediction);
+        setTimeout(predict, 1300);
+}
+const addText = () => {
+    
 }
 init();
