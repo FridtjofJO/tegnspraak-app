@@ -42,14 +42,12 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
+
+
+            // const classPrediction =
+            //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            //     labelContainer.childNodes[i].innerHTML = classPrediction;
         }        
-        // dette under funker ikke enda, får fikset det senere
-        // if (prediction[i] >= 0.8) {
-        //     labelContainer.innerHTML = "A";
-        // }
     console.log(prediction);
 }
 init();
