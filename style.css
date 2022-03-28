@@ -4,13 +4,20 @@ body{
 }
 #label-container{
     border: solid 1px gray;
+    box-sizing: border-box;
+    border-radius: 25px;
     width: 350px;
     height: 100%;
     /*margin-left: 15px;*/
     padding: 8px;
     font-size: 1.2rem;
+}
+
+#likhetsProsent{
+    border: solid 1px gray;
     box-sizing: border-box;
     border-radius: 25px;
+    max-width: 350px;
 }
 
 #mainFlex{
