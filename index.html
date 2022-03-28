@@ -10,6 +10,9 @@
 
 </head>
 <body>
+    <body onload="myFunction()" style="margin:0;">
+
+        <div id="loader"></div>
     <section id="app">
         <header>
             <section id="flex">
@@ -60,6 +63,18 @@
         $(".btn").on("click",function(){
         $('.menu').toggleClass("show");
             });
+
+        
+        var myVar;
+
+        function myFunction() {
+        myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        }
     </script>
 
     
