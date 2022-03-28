@@ -1,7 +1,7 @@
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 // the link to your model provided by Teachable Machine export panel
-const URL = "https://teachablemachine.withgoogle.com/models/_yrXCynzo/";
+const URL = "https://teachablemachine.withgoogle.com/models/qVRs6Cg4I/";
 let model, webcam, labelContainer, maxPredictions;
 // Load the image model and setup the webcam
 let cameraIsOn = false;
@@ -158,17 +158,36 @@ const alleBokstaver = [
     }
 ]
 
+const likhetsProsent = document.querySelector('#likhetsProsent');
+let likhetsProsentValue = 1;
 // run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            if (prediction[i].probability >= 0.98){
-                labelContainer.innerHTML += alleBokstaver[i].litenBokstav;
-            }
-        }        
-        setTimeout(predict, 1300);
+    for (let i = 0; i < maxPredictions; i++) {
+        if (prediction[i].probability >= 0.98){
+            labelContainer.innerHTML += alleBokstaver[i].litenBokstav;
+            let highest = finnHøyest(prediction);
+            likhetsProsentValue = (likhetsProsentValue * highest.probability);
+            console.log(likhetsProsentValue);
+            likhetsProsent.innerHTML = `${Math.floor(likhetsProsentValue*100)}%`;
+        }
+        
+    }        
+    setTimeout(predict, 1300);
 }
+
+const finnHøyest = (predictions) => {
+    console.log(predictions);
+    let highest = predictions[0];
+    for (let prediction of predictions){
+        if (prediction.probability > highest.probability){
+            highest = prediction;
+        }
+    }
+    return highest;
+}
+
 const addText = () => {
     
 }
