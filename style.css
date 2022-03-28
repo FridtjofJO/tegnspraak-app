@@ -8,7 +8,7 @@ body{
     border-radius: 25px;
     width: 350px;
     height: 100%;
-    /*margin-left: 15px;*/
+    /* margin-left: 15px; */
     padding: 8px;
     font-size: 1.2rem;
 }
@@ -18,6 +18,10 @@ body{
     box-sizing: border-box;
     border-radius: 25px;
     max-width: 350px;
+    padding-left: 11px;
+    overflow: hidden;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 #mainFlex{
