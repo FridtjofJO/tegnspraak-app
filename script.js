@@ -164,7 +164,7 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             if (prediction[i].probability >= 0.98){
-                labelContainer.innerHTML += alleBokstaver[i].litenBokstav + " ";
+                labelContainer.innerHTML += alleBokstaver[i].litenBokstav;
             }
         }        
         setTimeout(predict, 1300);
