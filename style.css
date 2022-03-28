@@ -18,8 +18,261 @@ body{
     grid-template-columns: 1fr 1fr;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-@media only screen and (max-width: 428px){
+h1{
+    color: #24BF27;
+    text-transform: uppercase;
+}
+header{
+    margin: 0 auto;
+    background: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.spacer {
+    width: 100%;
+    height: 95px;
+}
+.navbar{
+    height: 30px;
+    overflow: hidden;
+    top: 0;
+    display: flex;
+    width: 100%;
+}
+
+#flex {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    background-color: white;
+}
+
+.logo{
+    max-block-size: 120%;
+    width: 150px;
+}
+
+.menu{
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu a{
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.btn span{
+    display: block;
+    margin: 6px;
+    width: 40px;
+    height: 3px;
+    background: #333;
+}
+p{
+    padding: 20px;
+    font-size: 20px;
+}
+#hoved {
+    font-size: 2.7vw;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 75px;
+}
+
+a.active{
+    text-decoration: underline;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    border: 1px darkgray solid;
+    border-radius: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: white;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  #menyboks-sprk {
+      display: grid;
+      grid-template-columns: 1fr 7fr;
+      grid-gap: 3px;
+  }
+
+  #menyboks-farge{
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr 4fr;
+      grid-gap: 3px;
+  }
+
+  h2 {
+      font-size: 20px;
+      line-height: 40px;
+  }
+
+@media only screen and (max-width : 1200px) {
+    #hovedlogo, #bvhlogo{
+        display: none;
+    }
+    
+    #flex{ 
+        display: block;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 1.7vw;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    header{
+        padding: 0;
+        width: 100%;
+    }
+
+    #flex{
+        display: block;
+    }
+
+    #hovedlogo{
+        display: block;
+    }
+
+    #hoved{
+        display: none;
+    }
+
+    #wrapper{
+        padding: 20px;
+    }
+
+    .logo{
+        width: 75px;
+    }
+
+    .navbar{
+      overflow: visible;
+    }
+    
+    .menu{
+      width: 100%;
+      background-color: white;
+      overflow: hidden;
+      max-height: 0;
+      height: 350px;
+      margin-top: 30px;
+      margin-left: 200px;
+      padding-right: 30px;
+      border-left: 2px #707070 solid;
+      z-index: 999;
+      border-radius: 20px;
+      padding-left: 8px;
+    }
+
+    .menu a{
+      display: block;
+      text-align: right;
+      padding: 10px;
+      margin: 0;
+      font-size: 15px;
+    }
+    .btn{
+      display: block;
+      cursor: pointer;
+    }
+    .show{
+      max-height: 500px;
+    }
+
+    section#flex>img#hovedlogo{
+        height: 100%;
+    }
+
+  }
+  
+  
+
+
+@media only screen and (max-width: 500px){
     #mainFlex{
         display: grid;
         grid-template-columns: 1fr;
