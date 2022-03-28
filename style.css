@@ -4,16 +4,29 @@ body{
 }
 #label-container{
     border: solid 1px gray;
-    width: 500px;
+    width: 350px;
     height: 100%;
-    margin-left: 15px;
-    padding-left: 5px;
+    /*margin-left: 15px;*/
+    padding: 8px;
     font-size: 1.2rem;
+    box-sizing: border-box;
+    border-radius: 25px;
 }
+
 #mainFlex{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-h1 {
-    text-align: center;
+
+
+@media only screen and (max-width: 428px){
+    #mainFlex{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        align-items: center;
+        width: 400px;
+        right: 400px;
+    }
 }
+    
