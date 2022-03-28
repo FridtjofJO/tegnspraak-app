@@ -188,6 +188,11 @@ const finnHøyest = (predictions) => {
     return highest;
 }
 
+const removeBtn = document.querySelector('#removeBtn');
+const emptyLabelContainer = () => {
+    
+}
+
 const addText = () => {
     
 }
