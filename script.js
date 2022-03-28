@@ -170,7 +170,7 @@ async function predict() {
             let highest = finnHøyest(prediction);
             likhetsProsentValue = (likhetsProsentValue * highest.probability);
             console.log(likhetsProsentValue);
-            likhetsProsent.innerHTML = `${Math.floor(likhetsProsentValue*100)}%`;
+            likhetsProsent.innerHTML = `Nøyaktighet: ${Math.floor(likhetsProsentValue*100)}%`;
         }
         
     }        
