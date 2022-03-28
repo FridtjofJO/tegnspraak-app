@@ -17,6 +17,7 @@ body{
     border: solid 1px gray;
     box-sizing: border-box;
     border-radius: 25px;
+    word-wrap: break-word;
     width: 350px;
     height: 100%;
     padding: 8px;
