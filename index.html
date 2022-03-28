@@ -10,50 +10,52 @@
 
 </head>
 <body>
-    <header>
-        <section id="flex">
-            <img class="logo" id="hovedlogo" src="./Bilder/logoer-bannere/logo.jpg" alt="">
-            <h1 id="hoved">Innstillinger</h1>
-        </section>
-        <a class="btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-        <div class="navbar">
-            <div class="menu">
-                <h2>Språk</h2>
-                <div id="menyboks-sprk">
-                    <input checked type="radio" name="sprk" id="1"> Norsk </input>
-                    <input type="radio" name="sprk" id="2"> English </input>
-                    <input type="radio" name="sprk" id="3"> Deutsch </input>
-                    <input type="radio" name="sprk" id="4"> Francais </input>
-                </div>
-                <h2>Bakgrunn</h2>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-                <h2>Tilgjengelighet</h2>
-                <div id="menyboks-farge">
-                    <input checked type="radio" name="farge" id="5"> Blå </input>
-                    <input type="radio" name="farge" id="6"> Grønn </input>
-                    <input type="radio" name="farge" id="7"> Gul </input>
-                    <input type="radio" name="farge" id="8"> Rød </input>
+    <section id="app">
+        <header>
+            <section id="flex">
+                <img class="logo" id="hovedlogo" src="./logo-hand-navn.png" alt="">
+                <h1 id="hoved">Innstillinger</h1>
+            </section>
+            <a class="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="navbar">
+                <div class="menu">
+                    <h2>Språk</h2>
+                    <div id="menyboks-sprk">
+                        <input checked type="radio" name="sprk" id="1"> Norsk </input>
+                        <input type="radio" name="sprk" id="2"> English </input>
+                        <input type="radio" name="sprk" id="3"> Deutsch </input>
+                        <input type="radio" name="sprk" id="4"> Francais </input>
+                    </div>
+                    <h2>Bakgrunn</h2>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <h2>Tilgjengelighet</h2>
+                    <div id="menyboks-farge">
+                        <input checked type="radio" name="farge" id="5"> Blå </input>
+                        <input type="radio" name="farge" id="6"> Grønn </input>
+                        <input type="radio" name="farge" id="7"> Gul </input>
+                        <input type="radio" name="farge" id="8"> Rød </input>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div id="mainFlex">
-            <div id="webcam-container"></div>
-            <div id="label-container"></div>
-        </div>
-        <div id="likhetsProsent"></div>
-    </main>
-    <footer>
-
-    </footer>
+        </header>
+        <main>
+            <div id="mainFlex">
+                <div id="webcam-container"></div>
+                <div id="likhetsProsent"></div>
+                <div id="label-container"></div>
+            </div>
+        </main>
+        <footer>
+    
+        </footer>
+    </section>
     <script>
         $(".btn").on("click",function(){
         $('.menu').toggleClass("show");
