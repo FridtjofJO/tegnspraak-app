@@ -1,21 +1,40 @@
 body{
     padding: 0;
     margin: 0;
+    background-color: lightgray;
+    display: grid;
+    place-content: center;
+    height: 100vh;
 }
-#label-container{
+#app {
+    width: 375px;
+    height: 667px;
+    background-color: white;
+    position: relative;
+    overflow: scroll;
+}
+#label-container, #likhetsProsent{
     border: solid 1px gray;
     width: 350px;
     height: 100%;
-    /*margin-left: 15px;*/
     padding: 8px;
     font-size: 1.2rem;
     box-sizing: border-box;
     border-radius: 25px;
+    word-wrap: break-word;
 }
+
+#likhetsProsent{
+    text-align: center;
+}
+
 
 #mainFlex{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin: auto;
+    grid-gap: 7px;
 }
 
 *{
@@ -30,54 +49,53 @@ h1{
 }
 header{
     margin: 0 auto;
-    background: white;
     width: 100%;
     margin-bottom: 10px;
 }
 
 .spacer {
     width: 100%;
-    height: 95px;
 }
 .navbar{
-    height: 30px;
-    overflow: hidden;
+    height: 0px;
     top: 0;
+    overflow: visible;
     display: flex;
     width: 100%;
 }
 
 #flex {
-    display: flex;
+    display: block;
     justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
-    background-color: white;
 }
 
 .logo{
     max-block-size: 120%;
-    width: 150px;
+    width: 75px;
 }
 
 .menu{
-    margin-left: auto;
-    margin-right: auto;
-}
-.menu a{
-    color: #333;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
-    text-transform: uppercase;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    max-height: 0;
+    height: 350px;
+    margin-left: 200px;
+    padding-right: 30px;
+    z-index: 999;
+    border-radius: 20px;
+    padding-left: 8px;
 }
 
 .btn{
-    display: none;
     position: absolute;
     right: 20px;
     top: 30px;
+    display: block;
+    cursor: pointer;
 }
 
 .btn span{
@@ -92,11 +110,7 @@ p{
     font-size: 20px;
 }
 #hoved {
-    font-size: 2.7vw;
-    text-align: center;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 75px;
+display: none;
 }
 
 a.active{
@@ -185,101 +199,17 @@ a.active{
       line-height: 40px;
   }
 
-@media only screen and (max-width : 1200px) {
-    #hovedlogo, #bvhlogo{
-        display: none;
-    }
-    
-    #flex{ 
-        display: block;
-    }
-
-    header {
-        width: 100%;
-    }
-
-    .menu a {
-        font-size: 1.7vw;
-    }
+  #hovedlogo{
+    display: block;
+}
+#wrapper{
+    padding: 20px;
 }
 
-@media only screen and (max-width : 600px) {
-    header{
-        padding: 0;
-        width: 100%;
-    }
-
-    #flex{
-        display: block;
-    }
-
-    #hovedlogo{
-        display: block;
-    }
-
-    #hoved{
-        display: none;
-    }
-
-    #wrapper{
-        padding: 20px;
-    }
-
-    .logo{
-        width: 75px;
-    }
-
-    .navbar{
-      overflow: visible;
-    }
-    
-    .menu{
-      width: 100%;
-      background-color: white;
-      overflow: hidden;
-      max-height: 0;
-      height: 350px;
-      margin-top: 30px;
-      margin-left: 200px;
-      padding-right: 30px;
-      border-left: 2px #707070 solid;
-      z-index: 999;
-      border-radius: 20px;
-      padding-left: 8px;
-    }
-
-    .menu a{
-      display: block;
-      text-align: right;
-      padding: 10px;
-      margin: 0;
-      font-size: 15px;
-    }
-    .btn{
-      display: block;
-      cursor: pointer;
-    }
-    .show{
-      max-height: 500px;
-    }
-
-    section#flex>img#hovedlogo{
-        height: 100%;
-    }
-
+.show{
+    max-height: 500px;
+    border: 1px #707070 solid;
   }
-  
-  
-
-
-@media only screen and (max-width: 500px){
-    #mainFlex{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 20px;
-        align-items: center;
-        width: 400px;
-        right: 400px;
-    }
-}
-    
+  section#flex>img#hovedlogo{
+    height: 100%;
+  }
